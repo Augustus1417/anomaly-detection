@@ -1,3 +1,157 @@
-body { background: #f8f9fa; }
-#chart { position: relative; }
-.tooltip { pointer-events: none; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+/* Minimalist yet colorful design for Anomaly Detection Lab */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #2c3e50;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 48px rgba(102, 126, 234, 0.15);
+}
+
+.card-body {
+  padding: 24px;
+}
+
+.card-title {
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  padding: 10px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.form-control, .form-range {
+  border: 2px solid #e0e7ff;
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.form-control:focus, .form-range:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-label {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-text {
+  color: #7f8c8d;
+  font-size: 0.85rem;
+}
+
+#chart {
+  position: relative;
+  min-height: 500px;
+}
+
+.tooltip {
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: #fff;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  border-left: 4px solid #667eea;
+}
+
+.spinner-border {
+  color: #667eea !important;
+}
+
+#resultsSummary {
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  font-weight: 500;
+}
+
+.d-flex.justify-content-between {
+  gap: 12px;
+}
+
+.text-center {
+  margin: 16px 0;
+}
+
+/* D3 chart styling */
+#chart svg {
+  font-family: inherit;
+}
+
+#chart .pt {
+  cursor: pointer;
+  transition: r 0.2s ease;
+}
+
+#chart .pt:hover {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 16px;
+  }
+  
+  .card-body {
+    padding: 16px;
+  }
+  
+  #chart {
+    min-height: 350px;
+  }
